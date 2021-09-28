@@ -15,7 +15,6 @@ intro.addEventListener('scroll', function() {
     this.style.background = 'yellow'
 })
 
-const title = document.querySelector('.logo-heading')
 const navBarLinks = Array.from(document.querySelectorAll('.nav-link'))
 
 navBarLinks.forEach(link => {
@@ -70,6 +69,8 @@ setInterval(() => {
 }, 500)
 
 
-setTimeout(() => document.querySelector('.inverse-content').append(h3), 1000)
+setTimeout(() => {
+    document.querySelector('.inverse-content').append(h3)
+}, 1000)
 
 
