@@ -17,8 +17,8 @@ intro.addEventListener('scroll', function() {
 
 const title = document.querySelector('.logo-heading')
 const navBarLinks = Array.from(document.querySelectorAll('.nav-link'))
-navBarLinks.forEach(link => {
 
+navBarLinks.forEach(link => {
     link.addEventListener('mouseover', function() {
         this.style.color = 'red'
         this.style.fontWeight = 'bold'
@@ -48,12 +48,28 @@ function loopDelete(array) {
 
 // Nav Bar Growing
 let f = 1
-function func() {
+function navGrow() {
     f++
     navBarLinks.forEach(el => {
         el.style.fontSize = `${f}rem`
     })
 }
-setInterval(func, 1000)
+setInterval(navGrow, 1000)
+
+
+// Window error message growing
+const h3 = document.createElement('h3')
+h3.textContent = 'Error!'
+h3.style.fontFamily = 'Arial'
+h3.style.marginLeft = '15%'
+h3.style.color = 'red'
+
+setInterval(() => {
+    f++ 
+    h3.style.fontSize = `${f}rem`
+}, 500)
+
+
+setTimeout(() => document.querySelector('.inverse-content').append(h3), 1000)
 
 
